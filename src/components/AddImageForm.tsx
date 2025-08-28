@@ -269,10 +269,20 @@ const AddImageForm: React.FC<AddImageFormProps> = ({
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
       <Card className="w-full max-w-2xl max-h-[90vh] overflow-y-auto">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <ImageIcon className="h-5 w-5" />
-            Add New Image
-          </CardTitle>
+          <div className="flex items-center justify-between">
+            <CardTitle className="flex items-center gap-2">
+              <ImageIcon className="h-5 w-5" />
+              Add New Image
+            </CardTitle>
+            <Button
+              onClick={handleCancel}
+              variant="ghost"
+              size="sm"
+              className="h-8 w-8 p-0"
+            >
+              <X className="h-4 w-4" />
+            </Button>
+          </div>
         </CardHeader>
 
         <CardContent>
