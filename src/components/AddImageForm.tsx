@@ -289,7 +289,7 @@ const AddImageForm: React.FC<AddImageFormProps> = ({
                 >
                   <Upload className="mx-auto h-12 w-12 text-gray-400 mb-4" />
                   <p className="text-lg font-medium text-gray-900 mb-1">
-                    Drop your image here, or click to browse
+                    Drop your image here, or click to upload
                   </p>
                   <p className="text-sm text-gray-500 mb-4">
                     Supports PNG, JPEG, GIF up to 32MB
