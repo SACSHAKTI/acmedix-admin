@@ -9,6 +9,7 @@ import AdminBlogManagement from './pages/AdminBlogManagement';
 import AdminBlogForm from './pages/AdminBlogForm';
 import AdminCareerManagement from './pages/AdminCareerManagement';
 import AdminCareerForm from './pages/AdminCareerForm';
+import AdminGalleryManagement from './pages/AdminGalleryManagement';
 
 // Create a client
 const queryClient = new QueryClient({
@@ -38,6 +39,7 @@ function App() {
             <Route path="/admin/career" element={<AdminCareerManagement />} />
             <Route path="/admin/career/create" element={<AdminCareerForm />} />
             <Route path="/admin/career/edit/:id" element={<AdminCareerForm />} />
+            <Route path="/admin/gallery" element={<AdminGalleryManagement />} />
             
             {/* Catch all - redirect to admin login */}
             <Route path="*" element={<Navigate to="/admin/login" replace />} />

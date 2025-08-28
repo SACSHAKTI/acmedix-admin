@@ -16,7 +16,8 @@ import {
   BookOpen,
   PenTool,
   UserCheck,
-  Plus
+  Plus,
+  Image as ImageIcon
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { adminLogout, getCurrentAdminUser, verifyAdminSession } from '@/lib/adminAuth';
@@ -220,7 +221,7 @@ const AdminDashboard = () => {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
         {/* Quick Actions */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 mb-8">
           <Button
             onClick={() => navigate('/admin/blog')}
             className="h-20 bg-blue-600 hover:bg-blue-700 text-white flex flex-col items-center justify-center"
@@ -254,21 +255,20 @@ const AdminDashboard = () => {
           </Button>
           
           <Button
+            onClick={() => navigate('/admin/gallery')}
+            className="h-20 bg-indigo-600 hover:bg-indigo-700 text-white flex flex-col items-center justify-center"
+          >
+            <ImageIcon className="h-6 w-6 mb-1" />
+            <span className="font-semibold text-sm">Gallery</span>
+          </Button>
+          
+          <Button
             onClick={() => window.open('/blog', '_blank')}
             variant="outline"
             className="h-20 flex flex-col items-center justify-center"
           >
             <Eye className="h-6 w-6 mb-1" />
             <span className="font-semibold text-sm">View Website</span>
-          </Button>
-          
-          <Button
-            onClick={() => window.location.reload()}
-            variant="outline"
-            className="h-20 flex flex-col items-center justify-center"
-          >
-            <Users className="h-6 w-6 mb-1" />
-            <span className="font-semibold text-sm">Refresh Data</span>
           </Button>
         </div>
 

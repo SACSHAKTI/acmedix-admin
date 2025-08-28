@@ -1,8 +1,8 @@
 import { createClient } from '@supabase/supabase-js';
 
 // Supabase configuration
-const supabaseUrl = 'https://reizphewyhtrezuxzwuf.supabase.co';
-const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJlaXpwaGV3eWh0cmV6dXh6d3VmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA3MDk4NzEsImV4cCI6MjA1NjI4NTg3MX0.Ncl5y5N9Z_IDAnoa1H2ORMyPI5XdP7IZ3Qbrj_9XHVg';
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 // Create Supabase client
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
@@ -20,6 +20,19 @@ export interface ContactSubmission {
   submission_date?: string;
   status?: 'new' | 'read' | 'replied' | 'archived';
   source?: string;
+}
+
+// Type definitions for the life_at_acmedix_gallery table
+export interface LifeAtAcmedixGallery {
+  id?: number;
+  title: string;
+  description?: string;
+  image_url: string;
+  alt_text: string;
+  display_order: number;
+  is_active: boolean;
+  created_at?: string;
+  updated_at?: string;
 }
 
 // Function to submit contact form data
